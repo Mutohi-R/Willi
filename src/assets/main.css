@@ -1,0 +1,458 @@
+:root {
+
+  /* || COLORS */
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(0, 0%, 98%);
+  --clr-neutral-500: hsl(0, 100%, 99%);
+  --clr-neutral-900: hsl(0, 0%, 0%);
+
+  --clr-purple-100: hsla(296, 9%, 88%, 1);
+  --clr-purple-200: hsla(296, 9%, 80%, 1);
+  --clr-purple-300: hsla(296, 9%, 70%, 1);
+  --clr-purple-400: hsla(296, 9%, 60%, 1);
+  --clr-purple-500: hsla(296, 9%, 50%, 1);
+  --clr-purple-600: hsla(296, 13%, 39%, 1);
+  --clr-purple-700: hsla(296, 13%, 33%, 1);
+  --clr-purple-800: hsla(296, 13%, 26%, 1);
+  --clr-purple-800-opaque: hsla(296, 13%, 26%, 0.7);
+  --clr-purple-900: hsla(296, 13%, 20%, 1);
+  --clr-purple-900-opaque: hsla(296, 13%, 20%, 0.7);
+  --clr-purple-950: hsla(296, 13%, 13%, 1);
+  
+  --clr-yellow-100: hsla(40, 92%, 95%, 1);
+  --clr-yellow-200: hsla(40, 92%, 92%, 1);
+  --clr-yellow-300: hsla(40, 92%, 87%, 1);
+  --clr-yellow-400: hsla(40, 92%, 83%, 1);
+  --clr-yellow-500: hsla(40, 92%, 79%, 1);
+  --clr-yellow-600: hsla(40, 92%, 75%, 1);
+  --clr-yellow-700: hsla(40, 51%, 62%, 1);
+  --clr-yellow-800: hsla(40, 31%, 50%, 1);
+  --clr-yellow-900: hsla(40, 31%, 50%, 1);
+  --clr-yellow-950: hsla(40, 31%, 25%, 1);
+  --clr-bg-yellow: hsla(38, 100%, 98%, 1);
+  
+  --clr-grey-100: hsla(230, 7%, 87%, 1);
+  --clr-grey-200: hsla(230, 7%, 78%, 1);
+  --clr-grey-300: hsla(230, 7%, 67%, 1);
+  --clr-grey-400: hsla(230, 7%, 56%, 1);
+  --clr-grey-500: hsla(230, 9%, 45%, 1);
+  --clr-grey-600: hsla(230, 14%, 34%, 1);
+  --clr-grey-700: hsla(230, 14%, 28%, 1);
+  --clr-grey-800: hsla(230, 14%, 22%, 1);
+  --clr-grey-900: hsla(230, 14%, 17%, 1);
+  --clr-grey-950: hsla(230, 14%, 11%, 1);
+
+  /* || FONTS */
+
+  /* Step -2: 11.11px → 15.01px */
+  --step--2: clamp(0.6944rem, 0.614rem + 0.343vw, 0.9381rem);
+
+  /* Step -1: 13.33px → 16.89px */
+  --step--1: clamp(0.8331rem, 0.7597rem + 0.3131vw, 1.0556rem);
+
+  /* Step 0: 16.00px → 19.00px */
+  --step-0: clamp(1rem, 0.9382rem + 0.2639vw, 1.1875rem);
+
+  /* Step 1: 19.20px → 21.38px */
+  --step-1: clamp(1.2rem, 1.1551rem + 0.1917vw, 1.3363rem);
+
+  /* Step 2: 23.04px → 24.05px */
+  --step-2: clamp(1.44rem, 1.4192rem + 0.0888vw, 1.5031rem);
+
+  /* Step 3: 27.65px → 27.05px */
+  --step-3: clamp(1.6906rem, 1.7405rem + -0.0528vw, 1.7281rem);
+
+  /* Step 4: 33.18px → 30.43px */
+  --step-4: clamp(1.9019rem, 2.1304rem + -0.2419vw, 2.0738rem);
+
+  /* Step 5: 39.81px → 34.24px */
+  --step-5: clamp(2.14rem, 2.6029rem + -0.4899vw, 2.4881rem);
+
+  /* Step 6: 47.78px → 38.52px */
+  --step-6: clamp(2.4075rem, 3.1771rem + -0.8144vw, 2.9863rem);
+
+  /* Step 7: 57.33px → 43.33px */
+  --step-7: clamp(2.7081rem, 3.8717rem + -1.2313vw, 3.5831rem);
+
+  /* Step 8: 68.80px → 48.75px */
+  --step-8: clamp(3.0469rem, 4.7133rem + -1.7634vw, 4.3rem);
+
+  /* Step 9: 82.56px → 54.84px */
+  --step-9: clamp(3.4275rem, 5.7314rem + -2.438vw, 5.16rem);
+
+  --fs-200: var(--step--2);
+  --fs-300: var(--step--1);
+  --fs-400: var(--step-0);
+  --fs-500: var(--step-1);
+  --fs-600: var(--step-2);
+  --fs-700: var(--step-3);
+  --fs-800: var(--step-4);
+  --fs-900: var(--step-5);
+  --fs-l: var(--step-6);
+  --fs-xl: var(--step-7);
+  --fs-2xl: var(--step-8);
+  --fs-3xl: var(--step-9);
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --ff-base: 'Open Sans', sans-serif;
+  --ff-accent: 'Merriweather', serif;
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* || GENERAL STYLES */
+body {
+  font-family: var(--ff-base);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-regular);
+  color: var(--clr-grey-400);
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  padding: .6em 1.4em;
+  display: inline-flex;
+  justify-content: center;
+
+  &[data-type="primary"] {
+    background-color: var(--clr-purple-600);
+    color: var(--clr-neutral-100);
+    box-shadow: 3px 4px 8px 0px hsla(296, 13%, 26%, 0.15);
+
+    &:hover {
+      background-color: var(--clr-purple-700);
+    }
+
+    &:focus-within {
+      background-color: var(--clr-purple-500);
+    }
+
+    &:disabled {
+      background-color: var(--clr-grey-200);
+    }
+  }
+  
+  &[data-type="secondary"] {
+    background-color: transparent;
+    color: var(--clr-purple-600);
+    box-shadow: 3px 4px 8px 0px hsla(296, 13%, 26%, 0.15);
+    border: 1px solid var(--clr-purple-600);
+
+    &:hover {
+      background-color: var(--clr-neutral-100);
+      color: var(--clr-purple-700);
+      border-color: var(--clr-purple-700);
+    }
+
+    &:focus-within {
+      background-color: var(--clr-purple-500);
+      color: var(--clr-neutral-100)
+    }
+
+    &:disabled {
+      color: var(--clr-grey-200);
+      border-color: var(--clr-grey-200);
+    }
+  }
+
+  &[data-type="tertiary"] {
+    background-color: transparent;
+    color: var(--clr-purple-600);
+    border: none;
+    padding: 0;
+
+    &:hover {
+      color: var(--clr-purple-700);
+      text-decoration: underline;
+      text-underline-offset: .5em;
+    }
+
+    &:focus-within {
+      color: var(--clr-purple-400);
+    }
+
+    &:disabled {
+      color: var(--clr-grey-200);
+    }
+  }
+}
+
+/* || COMPOSITION */
+.content-grid {
+  --padding-inline: 1rem;
+  --content-max-width: 1000px;
+  --breakout-max-width: 1200px;
+  --partial-max-width: 1120px;
+
+  --breakout-size: calc(
+    (var(--breakout-max-width) - var(--content-max-width)) / 2
+  );
+
+  --partial-size: calc(
+    (var(--partial-max-width) - var(--content-max-width)) / 2
+  );
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr)[breakout-start] minmax(0, var(--breakout-size))[partial-start] minmax(0, var(--partial-size)) [content-start] min(100% - (var(--padding-inline) * 2),var(--content-max-width))[content-end]minmax(0, var(--breakout-size)) [partial-end] minmax(0, var(--partial-size)) [breakout-end]minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.content-grid > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.content-grid > .breakout {
+  grid-column: breakout;
+}
+
+.content-grid > .partial {
+  grid-column: partial;
+}
+
+.content-grid > .full-width {
+  grid-column: full-width;
+
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+.flow > * + * {
+  margin-top: var(--_flow-space, 1em);
+}
+
+.even-columns {
+  display: grid;
+}
+
+@media screen and (min-width: 65em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+/* || UTILTY CLASSES*/
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.bg-clr-yellow {
+  background-color: var(--clr-bg-yellow);
+}
+
+.bg-clr-yellow-100 {
+  background-color: var(--clr-yellow-100);
+}
+
+.bg-clr-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+
+.bg-clr-neutral-500 {
+  background-color: var(--clr-neutral-500);
+}
+
+.bg-clr-neutral-200 {
+  background-color: var(--clr-neutral-200);
+}
+
+.bg-clr-purple-700 {
+  background-color: var(--clr-purple-700);
+}
+
+.text-clr-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.text-clr-grey-500 {
+  color: var(--clr-grey-500);
+}
+
+.text-clr-grey-700 {
+  color: var(--clr-grey-700)
+}
+
+.text-clr-purple-400 {
+  color: var(--clr-purple-400);
+}
+
+.text-clr-purple-500 {
+  color: var(--clr-purple-500);
+}
+
+.text-clr-purple-600 {
+  color: var(--clr-purple-600);
+}
+
+.text-clr-purple-700 {
+  color: var(--clr-purple-700);
+}
+
+.ff-accent {
+  font-family: var(--ff-accent);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fs-l {
+  font-size: var(--fs-l);
+}
+
+.fs-xl {
+  font-size: var(--fs-xl);
+}
+
+.fs-2xl {
+  font-size: var(--fs-2xl);
+}
+
+.fs-3xl {
+  font-size: var(--fs-3xl);
+}
+
+.fw-reg {
+  font-weight: var(--fw-regular);
+}
+
+.fw-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+/* || BLOCK */
