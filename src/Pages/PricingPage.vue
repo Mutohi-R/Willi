@@ -14,23 +14,25 @@
                 <PricingBusiness />
             </div>
 
-            <div class="breakout">
-                <div class="features | flex justify-between items-center">
+            <div class="features | breakout | grid gap-10">
+                <div class="features__select | flex justify-between items-center">
                     <p class="fs-600 text-clr-purple-600">Compare all features</p>
                     <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5505 0.949491C16.0386 1.43765 16.0386 2.2291 15.5505 2.71726L8.8838 9.38392C8.39565 9.87208 7.60419 9.87208 7.11603 9.38392L0.449369 2.71726C-0.0387869 2.2291 -0.0387869 1.43765 0.449368 0.949491C0.937524 0.461336 1.72898 0.461336 2.21714 0.949491L7.99992 6.73227L13.7827 0.949491C14.2709 0.461335 15.0623 0.461335 15.5505 0.949491Z" fill="#705772"/>
                     </svg>
                 </div>
 
-                <p class="fs-400 text-center">Not sure which plan is right for you?</p>
-                <p class="connect | fs-400 text-center mx-auto"><button class="button" data-type="tertiary">Get in touch</button> with our team for more information or take a look at our <button class="button" data-type="tertiary">Walkthrough video</button> for an overview of the most common workflow</p>
-            </div>
-            <article class="breakout">
-                <img src="" alt="">
                 <div>
-                    <h2>Willi Enterprise</h2>
+                    <p class="fs-400 text-center">Not sure which plan is right for you?</p>
+                    <p class="connect | fs-400 text-center mx-auto"><button class="button" data-type="tertiary">Get in touch</button> with our team for more information or take a look at our <button class="button" data-type="tertiary">Walkthrough video</button> for an overview of the most common workflow</p>
+                </div>
+            </div>
+            <article class="join__card | breakout even-columns items-center | gap-36  | bg-clr-purple-100">
+                <img src="../assets/images/pana.png" alt="">
+                <div class="flow">
+                    <h2 class="fs-2xl text-clr-purple-700">Willi Enterprise</h2>
                     <p>For organizations that need centralized visibility, control, and support. Get Willi's powerful, intuitive work management platform with advanced admin features and security at scale.</p>
-                    <div>
+                    <div class="flex gap-4">
                         <button class="button" data-type="primary">Contact Us</button>
                         <button class="button" data-type="secondary">Learn More</button>
                     </div>
@@ -38,26 +40,19 @@
             </article>
         </section>
 
-        
-
-        
-
         <section class="faq">
             <h2>Frequently Asked Questions</h2>
         </section>
 
-        <section class="content-grid">
-            <p>Join more than 70,000+ companies that manage projects together</p>
-            <Companies />
-        </section>
+        <JoinComp />
     </main>
     <Footer />
 </template>
 
 <script setup>
 import NavBar from '@/components/NavBar.vue';
-import Companies from '@/components/Companies.vue';
 import Footer from '@/components/Footer.vue';
+import JoinComp from '@/components/JoinComp.vue';
 import PricingBasic from '@/components/PricingBasic.vue';
 import PricingPremium from '@/components/PricingPremium.vue';
 import PricingBusiness from '@/components/PricingBusiness.vue';
@@ -78,6 +73,10 @@ import PricingBusiness from '@/components/PricingBusiness.vue';
 }
 
 .features {
+    padding-block: 3rem;
+}
+
+.features__select {
     border: 1px solid var(--clr-purple-600);
     border-radius: .25rem;
     padding: 1.5rem 2rem;
@@ -87,4 +86,8 @@ import PricingBusiness from '@/components/PricingBusiness.vue';
     max-width: 60ch;
 }
 
+.join__card {
+    padding-block: 1.5rem;
+    padding-inline: 2.5rem;
+}
 </style>
