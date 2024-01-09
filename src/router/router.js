@@ -1,7 +1,8 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-import LandingPage from "../Pages/LandingPage.vue";
-import PricingPageVue from "@/Pages/PricingPage.vue";
+import LandingPage from "@/Pages/LandingPage.vue";
+import PricingPage from "@/Pages/PricingPage.vue";
+import Customer from "@/Pages/Customer.vue";
 
 const routes = [
   {
@@ -12,7 +13,12 @@ const routes = [
   {
     path: "/pricing",
     name: "pricing-page",
-    component: PricingPageVue,
+    component: PricingPage,
+  },
+  {
+    path: "/customer",
+    name: "customer-page",
+    component: Customer,
   }
 ];
 

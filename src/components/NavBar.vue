@@ -10,7 +10,7 @@
                 <ul role="list" class="flex gap-8 mx-auto fs-500 text-clr-purple-600">
                     <li><router-link to="/">Products</router-link></li>
                     <li><router-link to="/">Solutions</router-link></li>
-                    <li><router-link to="/">Customers</router-link></li>
+                    <li><router-link to="/customer">Customers</router-link></li>
                     <li><router-link to="/pricing">Pricing</router-link></li>
                     <li><router-link to="/">Company</router-link></li>
                 </ul>
