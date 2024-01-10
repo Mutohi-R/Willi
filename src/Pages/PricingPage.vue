@@ -40,9 +40,7 @@
             </article>
         </section>
 
-        <section class="faq">
-            <h2>Frequently Asked Questions</h2>
-        </section>
+        <Faq />
 
         <JoinComp />
     </main>
@@ -56,6 +54,7 @@ import JoinComp from '@/components/JoinComp.vue';
 import PricingBasic from '@/components/PricingBasic.vue';
 import PricingPremium from '@/components/PricingPremium.vue';
 import PricingBusiness from '@/components/PricingBusiness.vue';
+import Faq from '@/components/Faq.vue';
 
 </script>
 
