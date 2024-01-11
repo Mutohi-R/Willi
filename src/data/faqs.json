@@ -1,50 +1,50 @@
 [
-    {
-        "id": 1,
-        "question": "How does Willi's pricing work?",
-        "answer": "Willi provides a flexible pricing model based on users and features. Tailored plans for different business sizes are available. Visit our Pricing page for detailed information, and take advantage of our free trial to experience Willi's full functionality before committing.",
-        "isOpen": true
-    },
-    {
-        "id": 2,
-        "question": "Can I try before I buy?",
-        "answer": "Certainly! Willi offers a no-strings-attached free trial. Explore all features without providing a credit card. Use this opportunity to evaluate if Willi aligns with your workflow and boosts your time management efficiency.",
-        "isOpen": false
-    },
-    {
-        "id": 3,
-        "question": "We need to change the number of people in our team. How will that work?",
-        "answer": "Modifying your team size in Willi is easy. Log in, go to 'Team' or 'Account Settings,' and manage users. Add or remove members as needed. For new additions, send invitations; for reductions, deactivate or remove accounts. Note that our pricing adjusts automatically based on active users.",
-        "isOpen": false
-    },
-    {
-        "id": 4,
-        "question": "Should I upgrade my organization or my team?",
-        "answer": "Upgrade options in Willi are flexible. To enhance specific team capabilities, choose team upgrades for selective features. For comprehensive organization-wide improvements, opt for organizational upgrades. Visit our Pricing page for detailed feature information to make an informed decision based on your needs.",
-        "isOpen": false
-    },
-    {
-        "id": 5,
-        "question": "How do I cancel my Willi subscription or trial?",
-        "answer": "Canceling your Willi subscription is easy. Log in, go to 'Billing' or 'Account Settings,' and manage your subscription to cancel. If you're on a trial, you can cancel without charges before it ends. Remember, you'll have access until the current period concludes. Need help? Contact our support team for assistance.",
-        "isOpen": false
-    },
-    {
-        "id": 6,
-        "question": "Will I be charged sales tax?",
-        "answer": "Sales tax may apply depending on your location and applicable tax regulations. The final invoice will include any relevant taxes. You can review the detailed breakdown on the billing or payment page before confirming your purchase. If you have specific questions about sales tax, feel free to contact our support team for assistance.",
-        "isOpen": false
-    },
-    {
-        "id": 7,
-        "question": "What forms of payment do you accept?",
-        "answer": "We accept various forms of payment, including credit cards, debit cards, and other secure online payment methods. You can view and manage your payment options in the 'Billing' or 'Account Settings' section of your Willi account. If you encounter any issues or have specific payment-related questions, please reach out to our support team for assistance.",
-        "isOpen": false
-    },
-    {
-        "id": 8,
-        "question": "What is your refund policy?",
-        "answer": "Our refund policy is designed to ensure your satisfaction. If you are unsatisfied with Willi, you can request a refund within a specified period after the purchase. Refund eligibility and terms are outlined in our Terms of Service or Refund Policy page. Feel free to review these details or contact our support team for assistance with any refund-related inquiries.",
-        "isOpen": false
-    }
+  {
+    "id": 1,
+    "question": "How does Willi's pricing work?",
+    "answer": "Willi provides a flexible pricing model based on users and features. Tailored plans for different business sizes are available. Visit our Pricing page for detailed information, and take advantage of our free trial to experience Willi's full functionality before committing.",
+    "isOpen": false
+  },
+  {
+    "id": 2,
+    "question": "Can I try before I buy?",
+    "answer": "Certainly! Willi offers a no-strings-attached free trial. Explore all features without providing a credit card. Use this opportunity to evaluate if Willi aligns with your workflow and boosts your time management efficiency.",
+    "isOpen": false
+  },
+  {
+    "id": 3,
+    "question": "We need to change the number of people in our team. How will that work?",
+    "answer": "Modifying your team size in Willi is easy. Log in, go to 'Team' or 'Account Settings,' and manage users. Add or remove members as needed. For new additions, send invitations; for reductions, deactivate or remove accounts. Note that our pricing adjusts automatically based on active users.",
+    "isOpen": false
+  },
+  {
+    "id": 4,
+    "question": "Should I upgrade my organization or my team?",
+    "answer": "Upgrade options in Willi are flexible. To enhance specific team capabilities, choose team upgrades for selective features. For comprehensive organization-wide improvements, opt for organizational upgrades. Visit our Pricing page for detailed feature information to make an informed decision based on your needs.",
+    "isOpen": false
+  },
+  {
+    "id": 5,
+    "question": "How do I cancel my Willi subscription or trial?",
+    "answer": "Canceling your Willi subscription is easy. Log in, go to 'Billing' or 'Account Settings,' and manage your subscription to cancel. If you're on a trial, you can cancel without charges before it ends. Remember, you'll have access until the current period concludes. Need help? Contact our support team for assistance.",
+    "isOpen": false
+  },
+  {
+    "id": 6,
+    "question": "Will I be charged sales tax?",
+    "answer": "Sales tax may apply depending on your location and applicable tax regulations. The final invoice will include any relevant taxes. You can review the detailed breakdown on the billing or payment page before confirming your purchase. If you have specific questions about sales tax, feel free to contact our support team for assistance.",
+    "isOpen": false
+  },
+  {
+    "id": 7,
+    "question": "What forms of payment do you accept?",
+    "answer": "We accept various forms of payment, including credit cards, debit cards, and other secure online payment methods. You can view and manage your payment options in the 'Billing' or 'Account Settings' section of your Willi account. If you encounter any issues or have specific payment-related questions, please reach out to our support team for assistance.",
+    "isOpen": false
+  },
+  {
+    "id": 8,
+    "question": "What is your refund policy?",
+    "answer": "Our refund policy is designed to ensure your satisfaction. If you are unsatisfied with Willi, you can request a refund within a specified period after the purchase. Refund eligibility and terms are outlined in our Terms of Service or Refund Policy page. Feel free to review these details or contact our support team for assistance with any refund-related inquiries.",
+    "isOpen": false
+  }
 ]
