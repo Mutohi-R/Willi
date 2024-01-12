@@ -4,11 +4,12 @@
       Frequently Asked Questions
     </h2>
     <div class="faqs | partial">
-      <div v-for="(question, index) in questions" :key="question.id">
-        <div
-          class="flex items-center justify-between"
-          @click="toggleFaqAnswer(question.id)"
-        >
+      <div
+        @click="toggleFaqAnswer(question.id)"
+        v-for="(question, index) in questions"
+        :key="question.id"
+      >
+        <div class="flex items-center justify-between">
           <p class="fs-600 text-clr-purple-600">{{ question.question }}</p>
           <ArrowDown />
         </div>
@@ -23,7 +24,7 @@ import { ref } from "vue";
 import faqs from "@/data/faqs.json";
 import ArrowDown from "./icons/ArrowDown.vue";
 
-const questions = ref(faqs)
+const questions = ref(faqs);
 
 const toggleFaqAnswer = (index) => {
   const faqQuestion = questions.value.filter((question, i) => {
@@ -33,7 +34,6 @@ const toggleFaqAnswer = (index) => {
   clickedFaq.isOpen = !clickedFaq.isOpen;
   // console.log(`${clickedFaq.id} : ${clickedFaq.isOpen}`);
 };
-
 </script>
 
 <style scoped></style>

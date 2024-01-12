@@ -78,7 +78,7 @@
 .signup__content {
   width: 80%;
   margin-inline: auto;
-  padding-block: 1.8rem;
+  padding-block: 1.1rem;
 }
 
 .signup__content input {
