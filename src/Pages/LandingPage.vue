@@ -1,12 +1,12 @@
 <template>
-  <nav-bar @toggle-register="toggleIsRegister"></nav-bar>
+  <nav-bar @open-signup="openSignup" @open-login="openLogin"></nav-bar>
   <main class="">
-    <dialog id="dialog" class="register" @click="closeRegister($event)">
-      <Register />
+    <dialog id="signup" class="register" @click="closeSignUp($event)">
+      <SignUp />
     </dialog>
-    <!-- <section class="register | grid">
-      <Register v-if="isRegister" :isRegister="isRegister" :toggleIsRegister="toggleIsRegister"/>
-    </section> -->
+    <dialog id="login" class="register" @click="closeLogin($event)">
+      <LogIn />
+    </dialog>
     <section class="hero | content-grid">
       <div class="breakout even-columns | items-center">
         <div class="hero__content | grid gap-10">
@@ -21,7 +21,7 @@
             and keep track of your business results.
           </p>
           <div class="hero__button | flex gap-4">
-            <button class="button" data-type="primary">Get Started</button>
+            <button @click="openSignup" class="button" data-type="primary">Get Started</button>
             <button
               class="button"
               data-type="secondary"
@@ -60,7 +60,7 @@
       <Companies />
     </section>
 
-    <section class="about | content-grid | bg-clr-neutral-500">
+    <section id="about" class="about | content-grid | bg-clr-neutral-500">
       <div class="partial | grid gap-24">
         <div class="about__heading | content-grid flow | text-center">
           <h2 class="ff-accent fs-xl fw-bold text-clr-purple-700">
@@ -75,7 +75,7 @@
           <div
             class="flex gap-3 justify-center items-center fw-bold text-clr-purple-600"
           >
-            <p class="fs-300">
+            <p class="fs-300 cursor-pointer">
               Discover 100+ ways Willi helps empower your team
             </p>
             <svg
@@ -182,7 +182,7 @@
       <p class="ff-accent fs-800 text-clr-grey-700 text-center">
         Join more than 70,000+ companies that manage projects together
       </p>
-      <button class="button | mx-auto items-center gap-2" data-type="primary">
+      <button @click="openSignup" class="button | mx-auto items-center gap-2" data-type="primary">
         Get Started
         <svg
           width="24"
@@ -211,17 +211,28 @@ const props = defineProps(["isRegister", "toggleIsRegister"]);
 import NavBar from "@/components/NavBar.vue";
 import Companies from "@/components/Companies.vue";
 import ReviewsSlide from "@/components/ReviewsSlide.vue";
-import Register from "@/components/Register.vue";
+import SignUp from "@/components/SignUp.vue";
+import LogIn from "@/components/LogIn.vue";
 import Footer from "@/components/Footer.vue";
 
-const isRegister = ref(false);
-const toggleIsRegister = () => {
-  dialog.showModal();
+// const isRegister = ref(false);
+const openSignup = () => {
+  signup.showModal();
 };
 
-const closeRegister = (e) => {
-  if (e.target.id === "dialog") {
-    dialog.close();
+const openLogin = () => {
+  login.showModal();
+};
+
+const closeSignUp = (e) => {
+  if (e.target.id === "signup") {
+    signup.close();
+  }
+};
+
+const closeLogin = (e) => {
+  if (e.target.id === "login") {
+    login.close();
   }
 };
 </script>

@@ -16,8 +16,8 @@ const routes = [
     component: PricingPage,
   },
   {
-    path: "/customer",
-    name: "customer-page",
+    path: "/contact",
+    name: "contact-page",
     component: Customer,
   }
 ];

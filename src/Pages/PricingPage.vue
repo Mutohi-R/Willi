@@ -33,7 +33,7 @@
                     <h2 class="fs-2xl text-clr-purple-700">Willi Enterprise</h2>
                     <p>For organizations that need centralized visibility, control, and support. Get Willi's powerful, intuitive work management platform with advanced admin features and security at scale.</p>
                     <div class="flex gap-4">
-                        <button class="button" data-type="primary">Contact Us</button>
+                        <button @click="$router.push('/contact')" class="button" data-type="primary">Contact Us</button>
                         <button class="button" data-type="secondary">Learn More</button>
                     </div>
                 </div>

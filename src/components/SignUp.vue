@@ -1,7 +1,7 @@
 <template>
     <form
         @submit.prevent="onSubmit"
-        class="signup__modal | grid bg-clr-neutral-100"
+        class="signup__modal | grid bg-clr-neutral-100 text-clr-grey-400"
       >
         <div>
           <div class="signup__content | grid gap-3">
@@ -32,7 +32,7 @@
             >
               Continue
             </button>
-            <p class="text0clr-grey-400 fs-200">
+            <p class="text-clr-grey-400 fs-200">
               By clicking "Continue" you agree to the Willi's
               <button class="button | fs-200" data-type="tertiary">
                 Terms Of Service

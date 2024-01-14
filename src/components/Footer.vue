@@ -55,25 +55,25 @@
     <div class="content-grid | bg-clr-yellow-100">
         <section class="secondary-footer | breakout | flex justify-between ">
           <div class="flex gap-6">
-            <p class="fs-400 text-clr-purple-600">Terms & Conditions</p>
-            <p class="fs-400 text-clr-purple-600">Policies</p>
-            <p class="fs-400 text-clr-purple-600">Security</p>
+            <p class="fs-400 text-clr-purple-600 cursor-pointer">Terms & Conditions</p>
+            <p class="fs-400 text-clr-purple-600 cursor-pointer">Policies</p>
+            <p class="fs-400 text-clr-purple-600 cursor-pointer">Security</p>
           </div>
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 cursor-pointer">
             <Web />
             <p class="fs-400 text-clr-purple-600">Language</p>
           </div>
           <div class="footer__icons | flex items-center gap-6">
             <!-- twitter -->
-            <Twitter />
+            <Twitter class="cursor-pointer" />
             <!-- facebook -->
-            <Facebook />
+            <Facebook class="cursor-pointer" />
             <!-- linkedIn -->
-            <LinkedIn />
+            <LinkedIn class="cursor-pointer" />
             <!-- youtube -->
-            <Youtube />
+            <Youtube class="cursor-pointer" />
             <!-- instagram -->
-            <Instagram />
+            <Instagram class="cursor-pointer" />
           </div>
         </section>
     </div>

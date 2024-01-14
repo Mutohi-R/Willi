@@ -10,13 +10,13 @@
                 <ul role="list" class="flex gap-8 mx-auto fs-500 text-clr-purple-600">
                     <li><router-link to="/">Products</router-link></li>
                     <li><router-link to="/">Solutions</router-link></li>
-                    <li><router-link to="/customer">Customers</router-link></li>
+                    <li><router-link to="/contact">Customers</router-link></li>
                     <li><router-link to="/pricing">Pricing</router-link></li>
                     <li><router-link to="/">Company</router-link></li>
                 </ul>
                 <ul role="list" class="flex gap-4">
-                    <li><button class="button" data-type="primary" @click="emitToggleRegister">Sign Up</button></li>
-                    <li><button class="button" data-type="secondary" @click="toggleIsRegister">Log In</button></li>
+                    <li><button class="button" data-type="primary" @click="emitOpenSignup">Sign Up</button></li>
+                    <li><button class="button" data-type="secondary" @click="emitOpenLogin">Log In</button></li>
                 </ul>
             </nav>
         </div>
@@ -29,10 +29,14 @@
     import LogoDark from '../components/icons/LogoDark.vue'
 
     // const props = defineProps(['isRegister', 'toggleIsRegister']);
-    const emit = defineEmits(['toggleRegister']);
+    const emit = defineEmits(['openSignup', 'openLogin']);
 
-    const emitToggleRegister = () => {
-        emit('toggleRegister');
+    const emitOpenSignup = () => {
+        emit('openSignup');
+    }
+    
+    const emitOpenLogin = () => {
+        emit('openLogin', defineEmits);
     }
 </script> 
 

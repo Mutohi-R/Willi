@@ -275,6 +275,10 @@ body {
   }
 }
 
+form {
+  font: inherit;
+}
+
 /* || COMPOSITION */
 .content-grid {
   --padding-inline: 1rem;
@@ -376,6 +380,10 @@ body {
 
 .text-clr-neutral-100 {
   color: var(--clr-neutral-100);
+}
+
+.text-clr-grey-400 {
+  color: var(--clr-grey-400);
 }
 
 .text-clr-grey-500 {
