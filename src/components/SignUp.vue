@@ -52,7 +52,7 @@
               Continue with Google
             </button>
             <p class="fs-300 text-center text-clr-grey-700">
-              Already have an account? <router-link to=""><button class="button" data-type="tertiary">Log in</button></router-link>
+              Already have an account? <button class="button" data-type="tertiary" @click="emit('openLogin')">Log in</button>
             </p>
           </div>
         </div>
@@ -66,7 +66,9 @@
 </template>
 
 <script setup>
+import { defineEmits } from 'vue';
 
+const emit = defineEmits(['openLogin']);
 </script>
 
 <style scoped>

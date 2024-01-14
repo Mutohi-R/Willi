@@ -36,7 +36,7 @@
     }
     
     const emitOpenLogin = () => {
-        emit('openLogin', defineEmits);
+        emit('openLogin');
     }
 </script> 
 

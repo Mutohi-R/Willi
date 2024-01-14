@@ -1,10 +1,10 @@
 <template>
     <form
         @submit.prevent="onSubmit"
-        class="signup__modal | grid bg-clr-neutral-100 text-clr-grey-400"
+        class="login__modal | grid bg-clr-neutral-100 text-clr-grey-400"
       >
         <div>
-          <div class="signup__content | grid gap-3">
+          <div class="login__content | grid gap-3">
             <h2 class="fw-bold fs-800 text-clr-purple-700">Continue to Willi</h2>
             <p class="fs-300">
               Keep tracking your projects
@@ -18,13 +18,14 @@
                 name="email"
                 id="email"
                 placeholder="name@company.com"
+                class="input"
               />
             </div>
             <div class="grid gap-2">
               <p class="fs-200 text-clr-grey-700">
                 <label for="">Password</label>
               </p>
-              <input type="password" name="password" id="password" />
+              <input type="password" name="password" id="password" class="input" />
             </div>
             <button
               class="continue__button button | fs-300"
@@ -47,11 +48,11 @@
               Continue with Google
             </button>
             <p class="fs-300 text-center text-clr-grey-700">
-              Don't have an account? <router-link to=""><button class="button" data-type="tertiary">Sign Up</button></router-link>
+              Don't have an account? <button @click="emit('openSignup')" class="button" data-type="tertiary">Sign Up</button>
             </p>
           </div>
         </div>
-        <div class="signup__sidebar | grid items-end">
+        <div class="login__sidebar | grid items-end">
           <p class="fs-400">
             Join 70,000+ teams & businesses worldwide to use Willi to
             collaborate and manage your projects every day.
@@ -61,39 +62,34 @@
 </template>
 
 <script setup>
+import { defineEmits } from 'vue';
 
+const emit = defineEmits(['openSignup']);
 </script>
 
 <style scoped>
-.signup__modal {
+.login__modal {
   grid-template-columns: 1fr 40%;
   min-width: 62.5rem;
 }
 
-.signup__content {
+.login__content {
   width: 80%;
   margin-inline: auto;
   padding-block: 1.1rem;
-}
-
-.signup__content input {
-  border: 1px solid var(--clr-grey-200);
-  border-radius: 4px;
-  width: 100%;
-  padding: 0.75rem 1rem;
 }
 
 .continue__button {
   padding: 1rem;
 }
 
-.signup__sidebar {
+.login__sidebar {
   background-image: url("../assets/images/form-bg.png");
   background-size: cover;
   padding: 1.5rem;
 }
 
-.signup__sidebar p {
+.login__sidebar p {
   max-width: 32ch;
 }
 

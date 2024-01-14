@@ -2,10 +2,10 @@
   <nav-bar @open-signup="openSignup" @open-login="openLogin"></nav-bar>
   <main class="">
     <dialog id="signup" class="register" @click="closeSignUp($event)">
-      <SignUp />
+      <SignUp @open-login="openLogin" />
     </dialog>
     <dialog id="login" class="register" @click="closeLogin($event)">
-      <LogIn />
+      <LogIn @open-signup="openSignup" />
     </dialog>
     <section class="hero | content-grid">
       <div class="breakout even-columns | items-center">
@@ -217,10 +217,12 @@ import Footer from "@/components/Footer.vue";
 
 // const isRegister = ref(false);
 const openSignup = () => {
+  login.close();
   signup.showModal();
 };
 
 const openLogin = () => {
+  signup.close();
   login.showModal();
 };
 
