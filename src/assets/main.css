@@ -42,7 +42,26 @@
   --clr-grey-900: hsla(230, 14%, 17%, 1);
   --clr-grey-950: hsla(230, 14%, 11%, 1);
   
+  --clr-error-100: hsla(0, 42%, 89%, 1);
+  --clr-error-200: hsla(0, 42%, 73%, 1);
+  --clr-error-300: hsla(0, 42%, 55%, 1);
   --clr-error-400: hsla(0, 49%, 46%, 1);
+  --clr-error-500: hsla(0, 49%, 31%, 1);
+  --clr-error-600: hsla(0, 49%, 15%, 1);
+  
+  --clr-success-100: hsla(137, 45%, 87%, 1);
+  --clr-success-200: hsla(137, 45%, 68%, 1);
+  --clr-success-300: hsla(137, 45%, 68%, 1);
+  --clr-success-400: hsla(137, 80%, 36%, 1);
+  --clr-success-500: hsla(137, 80%, 24%, 1);
+  --clr-success-600: hsla(137, 80%, 12%, 1);
+
+  --clr-info-100: hsla(198, 79%, 90%, 1);
+  --clr-info-200: hsla(198, 79%, 75%, 1);
+  --clr-info-300: hsla(198, 79%, 59%, 1);
+  --clr-info-400: hsla(198, 79%, 51%, 1);
+  --clr-info-500: hsla(198, 76%, 34%, 1);
+  --clr-info-600: hsla(198, 76%, 17%, 1);
 
   /* || FONTS */
 
@@ -277,10 +296,30 @@ body {
 
 .input {
   border: 1px solid var(--clr-grey-200);
+  color: var(--clr-grey-500);
+  font-weight: var(--fw-semibold);
   border-radius: 4px;
   width: 100%;
   padding: 0.75rem 1rem;
+
+  &:is(:focus, :hover) {
+    outline: 1px solid var(--clr-grey-500);
+  }
+
+  &:disabled {
+    background-color: var(--clr-grey-100);
+  }
+
+  /* &:invalid {
+    border: 1px solid var(--clr-error-400);
+    background-color: var(--clr-error-400);
+  } */
+
+  /* &:valid {
+    border: var(--clr-success-400);
+  } */
 }
+
 
 form {
   font: inherit;
