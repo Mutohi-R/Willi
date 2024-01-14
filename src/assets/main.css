@@ -310,6 +310,15 @@ body {
     background-color: var(--clr-grey-100);
   }
 
+  &[data-type="invalid"] {
+    border: 1px solid var(--clr-error-400);
+    background-color: var(--clr-error-100);
+  }
+
+  &[data-type="valid"] {
+    border: 1px solid var(--clr-success-400);
+  }
+
   /* &:invalid {
     border: 1px solid var(--clr-error-400);
     background-color: var(--clr-error-400);
@@ -319,6 +328,9 @@ body {
     border: var(--clr-success-400);
   } */
 }
+
+/* || STATES */
+
 
 
 form {
@@ -458,6 +470,14 @@ form {
 
 .text-clr-purple-700 {
   color: var(--clr-purple-700);
+}
+
+.text-clr-error-400 {
+  color: var(--clr-error-400);
+}
+
+.text-clr-info-400 {
+  color: var(--clr-info-400);
 }
 
 .ff-accent {

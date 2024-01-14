@@ -1,9 +1,9 @@
 <template>
   <form
-    @submit.prevent="onSubmit"
+    @submit.prevent="SubmitForm"
     class="signup__modal | grid bg-clr-neutral-100 text-clr-grey-400"
   >
-    <div>
+    <div class="scroll">
       <div class="signup__content | grid gap-3">
         <h2 class="fw-bold fs-800 text-clr-purple-700">Welcome to Willi</h2>
         <p class="fs-300">Get started - It's free. No credit card needed.</p>
@@ -11,7 +11,17 @@
           <p class="fs-200 text-clr-grey-700">
             <label for="">Email Address</label>
           </p>
+          <p
+            v-if="invalidEmail"
+            class="flex items-center gap-2 fs-200 text-clr-error-400"
+          >
+            <Error />
+            Invalid email address
+          </p>
           <input
+            @input="validateInput"
+            v-model="email"
+            required
             type="email"
             name="email"
             id="email"
@@ -19,18 +29,32 @@
             class="input"
           />
         </div>
+        <!-- <p>{{ email }}</p> -->
         <div class="grid gap-2">
           <p class="fs-200 text-clr-grey-700">
             <label for="">Password</label>
           </p>
+          <p v-if="invalidPassword" class="fs-200 text-clr-info-400">
+            Password must be at least 8 characters long and must contain at
+            least one number.
+          </p>
           <input
-            type="password" 
-            name="password" 
+            @input="validateInput"
+            v-model="password"
+            required
+            type="password"
+            name="password"
             id="password"
             class="input"
           />
+          <!-- <p v-if="invalidPassword" class="fs-200 text-clr-error-400"></p> -->
         </div>
-        <button class="continue__button button | fs-300" data-type="primary">
+        <!-- <p>{{ password }}</p> -->
+        <button
+          :disabled="!formValid"
+          class="continue__button button | fs-300"
+          data-type="primary"
+        >
           Continue
         </button>
         <p class="text-clr-grey-400 fs-200">
@@ -74,9 +98,76 @@
 </template>
 
 <script setup>
-import { defineEmits } from "vue";
+import { ref, defineEmits } from "vue";
+import Error from "./icons/Error.vue";
 
 const emit = defineEmits(["openLogin"]);
+
+const email = ref("");
+const password = ref("");
+const invalidEmail = ref("");
+const invalidPassword = ref("");
+const formValid = ref("");
+
+const validateInput = (e) => {
+  const input = e.target;
+
+  const validateEmail = () => {
+    if (input.hasAttribute("type") && input.getAttribute("type") === "email") {
+      const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/g;
+
+      if (input.value.length === 0) {
+        input.removeAttribute("data-type");
+        invalidEmail.value = "";
+      } else if (!regex.test(input.value)) {
+        input.setAttribute("data-type", "invalid");
+        invalidEmail.value = true;
+      } else {
+        // console.log(input.value);
+        input.setAttribute("data-type", "valid");
+        invalidEmail.value = false;
+      }
+    }
+  };
+
+  const validatePassword = () => {
+    if (
+      input.hasAttribute("type") &&
+      input.getAttribute("type") === "password"
+    ) {
+      const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
+      if (input.value.length === 0) {
+        input.removeAttribute("data-type");
+        invalidPassword.value = "";
+      } else if (!regex.test(input.value)) {
+        input.setAttribute("data-type", "invalid");
+        invalidPassword.value = true;
+      } else {
+        input.setAttribute("data-type", "valid");
+        invalidPassword.value = false;
+      }
+    }
+  };
+  validateEmail();
+  validatePassword();
+
+  formValid.value =
+    input.value.length !== 0 &&
+    !invalidEmail.value &&
+    !invalidPassword.value &&
+    email.value.length !== 0 &&
+    password.value.length !== 0
+      ? true
+      : false;
+
+  // if (!invalidEmail.value && !invalidPassword.value) {
+  //   formValid.value = true;
+  // } else {
+  //   formValid.value = false;
+  // }
+  console.log("email", invalidEmail.value);
+  console.log("password", invalidPassword.value);
+};
 </script>
 
 <style scoped>

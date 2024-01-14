@@ -315,4 +315,14 @@ const closeLogin = (e) => {
   width: min(1000px, 90%);
   border-radius: 6px;
 }
+
+.register::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.register::-webkit-scrollbar-thumb {
+  background-color: var(--clr-purple-400);
+  border-radius: 100vw;
+}
 </style>

@@ -1,6 +1,12 @@
 <template>
-  <nav-bar></nav-bar>
-  <main>
+  <nav-bar @open-signup="openSignup" @open-login="openLogin"></nav-bar>
+  <main> 
+    <dialog id="signup" class="register" @click="closeSignUp($event)">
+      <SignUp @open-login="openLogin" />
+    </dialog>
+    <dialog id="login" class="register" @click="closeLogin($event)">
+      <LogIn @open-signup="openSignup" />
+    </dialog>
     <section class="contact__hero | content-grid | bg-clr-yellow-100">
       <div class="grid gap-10">
         <div class="grid gap-4">
@@ -20,7 +26,6 @@
               >Your Name</label
             >
             <input
-              disabled
               class="input"
               type="text"
               name="name"
@@ -71,7 +76,7 @@
 
     <section class="content-grid | bg-clr-neutral-500">
       <img
-        class="map | full-width | mx-auto"
+        class="map | full-width"
         src="@/assets/images/map.png"
         alt=""
       />
@@ -87,8 +92,32 @@
 
 <script setup>
 import NavBar from "@/components/NavBar.vue";
+import SignUp from "@/components/SignUp.vue";
+import LogIn from "@/components/LogIn.vue";
 import JoinComp from "@/components/JoinComp.vue";
 import Footer from "@/components/Footer.vue";
+
+const openSignup = () => {
+  login.close();
+  signup.showModal();
+};
+
+const openLogin = () => {
+  signup.close();
+  login.showModal();
+};
+
+const closeSignUp = (e) => {
+  if (e.target.id === "signup") {
+    signup.close();
+  }
+};
+
+const closeLogin = (e) => {
+  if (e.target.id === "login") {
+    login.close();
+  }
+};
 </script>
 
 <style scoped>
@@ -163,8 +192,4 @@ import Footer from "@/components/Footer.vue";
   grid-area: button;
 }
 
-.map {
-  max-height: 32rem;
-  max-width: 87rem;
-}
 </style>
