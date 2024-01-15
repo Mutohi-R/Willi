@@ -167,13 +167,15 @@
       </div>
     </section>
 
-    <section class="reviews | content-grid | grid gap-12 bg-clr-neutral-200">
-      <h2
-        class="reviews__heading | ff-accent fs-900 fw-bold text-clr-purple-500 text-center mx-auto"
-      >
-        Companies change for the better when they work in Willi.
-      </h2>
-      <ReviewsSlide />
+    <section class="reviews|  | grid gap-12 bg-clr-neutral-200">
+      <div class="content-grid">
+        <h2
+          class="reviews__heading | ff-accent fs-900 fw-bold text-clr-purple-500 text-center mx-auto"
+        >
+          Companies change for the better when they work in Willi.
+        </h2>
+      </div>
+        <ReviewsSlide />
     </section>
 
     <section

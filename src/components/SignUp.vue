@@ -160,11 +160,6 @@ const validateInput = (e) => {
       ? true
       : false;
 
-  // if (!invalidEmail.value && !invalidPassword.value) {
-  //   formValid.value = true;
-  // } else {
-  //   formValid.value = false;
-  // }
   console.log("email", invalidEmail.value);
   console.log("password", invalidPassword.value);
 };
