@@ -51,7 +51,10 @@
         padding: 0.75rem 0;
         box-shadow: 0px 6px 12px 0px hsla(230, 7%, 78%, 0.3);
 
-        position: relative;
+        position: fixed;
+        top: 0;
+        background-color: var(--clr-neutral-100);
+        width: 100%;
     }
 
     @media screen and (max-width: 960px) {
@@ -71,7 +74,7 @@
         }
 
         .primary__nav[data-visible] {
-            background-color: var(--clr-purple-600-opaque);
+            background-color: var(--clr-yellow-100-opaque);
             padding-block: 4rem;
             display: grid;
             justify-content: center;
@@ -83,7 +86,8 @@
         }
 
         .primary__nav[data-visible] ul {
-            color: var(--clr-purple-100);
+            /* color: var(--clr-purple-100); */
+            /* color: white; */
         }
 
         .nav__actions * {
