@@ -1,7 +1,7 @@
 <template>
   <footer class="footer | text-clr-neutral-100">
     <div class="content-grid | bg-clr-purple-700">
-        <section class="primary-footer | breakout | flex justify-between items-center">
+        <section class="primary-footer | breakout | flex justify-between gap-6 items-center">
           <div class="logo">
             <LogoWhite />
           </div>

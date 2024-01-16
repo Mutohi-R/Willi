@@ -186,7 +186,7 @@ select {
   font: inherit;
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
+/* Make sure text-areas without a rows attribute are not tiny */
 textarea:not([rows]) {
   min-height: 10em;
 }
@@ -392,7 +392,7 @@ form {
   }
 }
 
-/* || UTILTY CLASSES*/
+/* || UTILITY CLASSES*/
 
 .visually-hidden:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
