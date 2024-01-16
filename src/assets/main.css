@@ -7,17 +7,25 @@
   --clr-neutral-900: hsl(0, 0%, 0%);
 
   --clr-purple-100: hsla(296, 9%, 88%, 1);
+  --clr-purple-100-opaque: hsla(296, 9%, 88%, 0.6);
   --clr-purple-200: hsla(296, 9%, 80%, 1);
+  --clr-purple-200-opaque: hsla(296, 9%, 80%, 0.6);
   --clr-purple-300: hsla(296, 9%, 70%, 1);
+  --clr-purple-300-opaque: hsla(296, 9%, 70%, 0.6);
   --clr-purple-400: hsla(296, 9%, 60%, 1);
+  --clr-purple-400-opaque: hsla(296, 9%, 60%, 0.6);
   --clr-purple-500: hsla(296, 9%, 50%, 1);
+  --clr-purple-500-opaque: hsla(296, 9%, 50%, 0.6);
   --clr-purple-600: hsla(296, 13%, 39%, 1);
+  --clr-purple-600-opaque: hsla(296, 13%, 39%, 0.6);
   --clr-purple-700: hsla(296, 13%, 33%, 1);
+  --clr-purple-700-opaque: hsla(296, 13%, 33%, 0.6);
   --clr-purple-800: hsla(296, 13%, 26%, 1);
-  --clr-purple-800-opaque: hsla(296, 13%, 26%, 0.7);
+  --clr-purple-800-opaque: hsla(296, 13%, 26%, 0.6);
   --clr-purple-900: hsla(296, 13%, 20%, 1);
-  --clr-purple-900-opaque: hsla(296, 13%, 20%, 0.7);
+  --clr-purple-900-opaque: hsla(296, 13%, 20%, 0.6);
   --clr-purple-950: hsla(296, 13%, 13%, 1);
+  --clr-purple-950-opaque: hsla(296, 13%, 13%, 0.6);
   
   --clr-yellow-100: hsla(40, 92%, 95%, 1);
   --clr-yellow-200: hsla(40, 92%, 92%, 1);
