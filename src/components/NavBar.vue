@@ -25,12 +25,11 @@
 </template>
 
 <script setup>
-    import { defineProps, defineEmits } from 'vue';
+    import { defineEmits } from 'vue';
 
     import Hamburger from './icons/Hamburger.vue';
     import LogoDark from '../components/icons/LogoDark.vue'
 
-    // const props = defineProps(['isRegister', 'toggleIsRegister']);
     const emit = defineEmits(['openSignup', 'openLogin']);
 
     const emitOpenSignup = () => {

@@ -213,7 +213,6 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from "vue";
 const props = defineProps(["isRegister", "toggleIsRegister"]);
 
 import NavBar from "@/components/NavBar.vue";
@@ -250,7 +249,7 @@ const closeLogin = (e) => {
 <style>
 /* hero section */
 .hero {
-  padding-block: 9.2rem 4.6rem;
+  padding-block: 8rem 4.6rem;
   background-image: linear-gradient(
     45deg,
     var(--clr-bg-yellow) 62.9%,
