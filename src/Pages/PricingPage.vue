@@ -129,8 +129,8 @@ const closeLogin = (e) => {
 <style scoped>
 .pricing__hero {
   padding-block: 9.8rem;
-  background-image: url("@/assets/images/vector-1.png"),
-    url("@/assets/images/vector-2.png"), url("@/assets/images/vector-3.png");
+  background-image: url("src/assets/images/vector-1.png"),
+    url("src/assets/images/vector-2.png"), url("src/assets/images/vector-3.png");
   background-repeat: no-repeat;
   background-position: bottom -230px right -230px, bottom -300px left 10px,
     top -180px left -200px;
