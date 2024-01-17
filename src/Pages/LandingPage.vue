@@ -8,7 +8,7 @@
       <LogIn @open-signup="openSignup" />
     </dialog>
     <section class="hero | content-grid">
-      <div class="breakout even-columns | items-center">
+      <div class="breakout even-columns | gap-y-8 items-center">
         <div class="hero__content | grid gap-10">
           <h1
             class="hero__heading | ff-accent fs-l fw-bold text-clr-purple-700"
@@ -20,8 +20,10 @@
             manage your sales and customers, plan your team’s time and projects,
             and keep track of your business results.
           </p>
-          <div class="hero__button | flex gap-4">
-            <button @click="openSignup" class="button" data-type="primary">Get Started</button>
+          <div class="hero__button | flex flex-wrap gap-4">
+            <button @click="openSignup" class="button" data-type="primary">
+              Get Started
+            </button>
             <button
               class="button"
               data-type="secondary"
@@ -30,7 +32,7 @@
               Explore Demo
             </button>
           </div>
-          <div class="hero__details | flex gap-12">
+          <div class="hero__details | grid gap-y-4">
             <div>
               <p class="fs-800 text-clr-grey-500">2.5M+</p>
               <p>Users</p>
@@ -63,7 +65,7 @@
     <section id="about" class="about | content-grid | bg-clr-neutral-500">
       <div class="partial | grid gap-24">
         <div class="about__heading | content-grid flow | text-center">
-          <h2 class="ff-accent fs-xl fw-bold text-clr-purple-700">
+          <h2 class="ff-accent fs-l fw-bold text-clr-purple-700">
             Why Willi?
           </h2>
           <p class="fs-600">
@@ -96,8 +98,8 @@
           </div>
         </div>
         <div class="about__content">
-          <ul role="list" class="grid gap-28">
-            <li class="even-columns">
+          <ul role="list" class="grid gap-5">
+            <li class="even-columns gap-y-6">
               <div class="list__content | grid content-start gap-2">
                 <p class="fs-2xl fw-semibold">1.</p>
                 <p class="ff-accent fs-800 fw-bold text-clr-purple-500">
@@ -113,7 +115,7 @@
                 <img src="@/assets/images/team-task.png" alt="" />
               </div>
             </li>
-            <li class="even-columns">
+            <li class="even-columns gap-y-6">
               <div class="list__content | grid content-start gap-2">
                 <p class="fs-2xl fw-semibold">2.</p>
                 <p class="ff-accent fs-800 fw-bold text-clr-purple-500">
@@ -130,7 +132,7 @@
                 <img src="@/assets/images/team-task.png" alt="" />
               </div>
             </li>
-            <li class="even-columns">
+            <li class="even-columns gap-y-6">
               <div class="list__content | grid content-start gap-2">
                 <p class="fs-2xl fw-semibold">3.</p>
                 <p class="ff-accent fs-800 fw-bold text-clr-purple-500">
@@ -146,7 +148,7 @@
                 <img src="@/assets/images/team-task.png" alt="" />
               </div>
             </li>
-            <li class="even-columns">
+            <li class="even-columns gap-y-6">
               <div class="list__content | grid content-start gap-2">
                 <p class="fs-2xl fw-semibold">4.</p>
                 <p class="ff-accent fs-800 fw-bold text-clr-purple-500">
@@ -167,7 +169,7 @@
       </div>
     </section>
 
-    <section class="reviews|  | grid gap-12 bg-clr-neutral-200">
+    <section class="reviews| | grid gap-12 bg-clr-neutral-200">
       <div class="content-grid">
         <h2
           class="reviews__heading | ff-accent fs-900 fw-bold text-clr-purple-500 text-center mx-auto"
@@ -175,7 +177,7 @@
           Companies change for the better when they work in Willi.
         </h2>
       </div>
-        <ReviewsSlide />
+      <ReviewsSlide />
     </section>
 
     <section
@@ -184,7 +186,11 @@
       <p class="ff-accent fs-800 text-clr-grey-700 text-center">
         Join more than 70,000+ companies that manage projects together
       </p>
-      <button @click="openSignup" class="button | mx-auto items-center gap-2" data-type="primary">
+      <button
+        @click="openSignup"
+        class="button | mx-auto items-center gap-2"
+        data-type="primary"
+      >
         Get Started
         <svg
           width="24"
@@ -244,7 +250,7 @@ const closeLogin = (e) => {
 <style>
 /* hero section */
 .hero {
-  padding-block: 4.6rem;
+  padding-block: 9.2rem 4.6rem;
   background-image: linear-gradient(
     45deg,
     var(--clr-bg-yellow) 62.9%,
@@ -255,24 +261,26 @@ const closeLogin = (e) => {
 .hero__heading {
   max-width: 17ch;
   line-height: 1.4;
+  text-wrap: balance;
 }
+
+@media screen and (max-width: 350px) {
+  .hero__button > * {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .hero__details {
+    display: flex;
+    gap: 2.5rem;
+  }
+}
+
 
 /* about section */
 .about {
   padding-block: 7.5rem;
-}
-
-.about__content li:nth-of-type(2n) {
-  direction: rtl;
-  justify-items: start;
-}
-
-.about__content li:nth-of-type(2n) .list__content {
-  justify-items: end;
-}
-
-.about__content li:nth-of-type(2n) p {
-  direction: ltr;
 }
 
 .about__content p:nth-of-type(1) {
@@ -280,18 +288,37 @@ const closeLogin = (e) => {
   -webkit-text-stroke: 1px var(--clr-purple-400);
 }
 
-.about__content p:nth-of-type(2) {
-  max-width: 23.2ch;
-}
-
-.about__content p:nth-of-type(3) {
-  max-width: 38ch;
-}
-
 .about__img {
   border-radius: 8px;
   box-shadow: 0px 8px 16px 0px rgba(195, 196, 203, 0.4);
   overflow: hidden;
+}
+
+@media screen and (min-width: 65em) {
+  .about__content > ul {
+    gap: 7rem;
+  }
+
+  .about__content li:nth-of-type(2n) {
+    direction: rtl;
+    justify-items: start;
+  }
+
+  .about__content li:nth-of-type(2n) .list__content {
+    justify-items: end;
+  }
+
+  .about__content li:nth-of-type(2n) p {
+    direction: ltr;
+  }
+
+  .about__content p:nth-of-type(2) {
+    max-width: 23.2ch;
+  }
+
+  .about__content p:nth-of-type(3) {
+    max-width: 38ch;
+  }
 }
 
 /* reviews section */

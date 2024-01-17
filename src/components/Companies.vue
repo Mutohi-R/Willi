@@ -1,5 +1,5 @@
 <template>
-  <div class="company__icons | flex justify-between items-center">
+  <div class="company__icons | flex gap-5 justify-between items-center">
     <IBM />
     <Apple />
     <DB />

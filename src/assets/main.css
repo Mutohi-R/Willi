@@ -101,20 +101,20 @@
   /* Step 3: 27.65px → 27.05px */
   --step-3: clamp(1.6906rem, 1.7405rem + -0.0528vw, 1.7281rem);
 
-  /* Step 4: 33.18px → 30.43px */
-  --step-4: clamp(1.9019rem, 2.1304rem + -0.2419vw, 2.0738rem);
+  /* Step 4: 29.18px → 32.43px */
+  --step-4: clamp(1.8125rem, 1.7473rem + 0.3261vw, 2rem);
 
-  /* Step 5: 39.81px → 34.24px */
-  --step-5: clamp(2.14rem, 2.6029rem + -0.4899vw, 2.4881rem);
+  /* Step 5: 38.81px → 42.24px */
+  --step-5: clamp(2.375rem, 2.288rem + 0.4348vw, 2.625rem);
 
-  /* Step 6: 47.78px → 38.52px */
-  --step-6: clamp(2.4075rem, 3.1771rem + -0.8144vw, 2.9863rem);
+  /* Step 6: 42.78px → 48.52px */
+  --step-6: clamp(2.6875rem, 2.5788rem + 0.5435vw, 3rem);
 
-  /* Step 7: 57.33px → 43.33px */
-  --step-7: clamp(2.7081rem, 3.8717rem + -1.2313vw, 3.5831rem);
+  /* Step 7: 43.33px → 57.33px */
+  --step-7: clamp(2.6875rem, 2.3832rem + 1.5217vw, 3.5625rem);
 
-  /* Step 8: 68.80px → 48.75px */
-  --step-8: clamp(3.0469rem, 4.7133rem + -1.7634vw, 4.3rem);
+  /* Step 8: 55.80px → 64.75px */
+  --step-8: clamp(3.4375rem, 3.2418rem + 0.9783vw, 4rem);
 
   /* Step 9: 82.56px → 54.84px */
   --step-9: clamp(3.4275rem, 5.7314rem + -2.438vw, 5.16rem);

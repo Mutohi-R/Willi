@@ -10,7 +10,7 @@
     <section class="contact__hero | content-grid | bg-clr-yellow-100">
       <div class="grid gap-10">
         <div class="grid gap-4">
-          <h1 class="fs-xl text-clr-purple-700 text-center">
+          <h1 class="fs-l text-clr-purple-700 text-center">
             Contact Willi Support
           </h1>
           <p class="text-center">Have questions? We'd love to help :)</p>

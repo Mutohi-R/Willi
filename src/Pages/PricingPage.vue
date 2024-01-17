@@ -61,7 +61,7 @@
         </div>
       </div>
       <article
-        class="join__card | breakout even-columns items-center | gap-36 | bg-clr-purple-100"
+        class="join__card | breakout even-columns items-center | gap-x-36 | bg-clr-purple-100"
       >
         <img src="../assets/images/pana.png" alt="" />
         <div class="flow">

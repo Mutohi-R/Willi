@@ -53,6 +53,7 @@
 
         position: fixed;
         top: 0;
+        z-index: 10;
         background-color: var(--clr-neutral-100);
         width: 100%;
     }
@@ -83,11 +84,6 @@
             position: fixed;
             inset: 0 0 0 30%;
             
-        }
-
-        .primary__nav[data-visible] ul {
-            /* color: var(--clr-purple-100); */
-            /* color: white; */
         }
 
         .nav__actions * {
