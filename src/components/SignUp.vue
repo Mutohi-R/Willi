@@ -1,7 +1,7 @@
 <template>
   <form
     @submit.prevent="SubmitForm"
-    class="signup__modal | grid bg-clr-neutral-100 text-clr-grey-400"
+    class="signup__modal | bg-clr-neutral-100 text-clr-grey-400"
   >
     <div class="scroll">
       <div class="signup__content | grid gap-3">
@@ -29,7 +29,6 @@
             class="input"
           />
         </div>
-        <!-- <p>{{ email }}</p> -->
         <div class="grid gap-2">
           <p class="fs-200 text-clr-grey-700">
             <label for="">Password</label>
@@ -49,7 +48,6 @@
           />
           <!-- <p v-if="invalidPassword" class="fs-200 text-clr-error-400"></p> -->
         </div>
-        <!-- <p>{{ password }}</p> -->
         <button
           :disabled="!formValid"
           class="continue__button button | fs-300"
@@ -88,7 +86,7 @@
         </p>
       </div>
     </div>
-    <div class="signup__sidebar | grid items-end">
+    <div class="signup__sidebar | hidden items-end">
       <p class="fs-400">
         Join 70,000+ teams & businesses worldwide to use Willi to collaborate
         and manage your projects every day.
@@ -168,13 +166,22 @@ const validateInput = (e) => {
 <style scoped>
 .signup__modal {
   grid-template-columns: 1fr 40%;
-  min-width: 62.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .signup__modal {
+    display: grid;
+  }
+
+  .signup__sidebar {
+    display: grid;
+  }
 }
 
 .signup__content {
   width: 80%;
   margin-inline: auto;
-  padding-block: 1.1rem;
+  padding-block: 1rem;
 }
 
 .continue__button {
