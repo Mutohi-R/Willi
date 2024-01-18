@@ -22,35 +22,35 @@
   },
   {
     "id": 4,
-    "avatar": "src/assets/images/scot.png",
+    "avatar": "/public-assets/images/scot.png",
     "name": "Mike Johnson",
     "company": "Microsoft",
     "content": "“The user interface is intuitive, and the customization options cater perfectly to our specific project needs.”"
   },
   {
     "id": 5,
-    "avatar": "src/assets/images/dale.png",
+    "avatar": "/public-assets/images/dale.png",
     "name": "Lisa Thompson",
     "company": "Amazon",
     "content": "“The support team is responsive and always ready to assist. It's reassuring to know help is just a message away.”"
   },
   {
     "id": 6,
-    "avatar": "src/assets/images/hadizah.png",
+    "avatar": "/public-assets/images/hadizah.png",
     "name": "Jane Smith",
     "company": "Google",
     "content": "“The collaborative features are exceptional. It allows teams to seamlessly work together, leading to increased efficiency.”"
   },
   {
     "id": 7,
-    "avatar": "src/assets/images/dale.png",
+    "avatar": "/public-assets/images/dale.png",
     "name": "Emma White",
     "company": "Facebook",
     "content": "“The reporting features are robust and help us analyze data effectively, contributing to informed decision-making.”"
   },
   {
     "id": 8,
-    "avatar": "src/assets/images/scot.png",
+    "avatar": "/public-assets/images/scot.png",
     "name": "David Miller",
     "company": "Tesla",
     "content": "“I appreciate the seamless integration with other tools. It streamlines our workflow and saves a significant amount of time.”"
