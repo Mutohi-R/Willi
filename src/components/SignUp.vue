@@ -1,8 +1,9 @@
 <template>
   <form
     @submit.prevent="SubmitForm"
-    class="signup__modal | bg-clr-neutral-100 text-clr-grey-400"
+    class="signup__modal | relative bg-clr-neutral-100 text-clr-grey-400"
   >
+    <Cross class="cross" @click="emit('closeSignup')" />
     <div class="scroll">
       <div class="signup__content | grid gap-3">
         <h2 class="fw-bold fs-800 text-clr-purple-700">Welcome to Willi</h2>
@@ -98,8 +99,9 @@
 <script setup>
 import { ref, defineEmits } from "vue";
 import Error from "./icons/Error.vue";
+import Cross from "./icons/Cross.vue";
 
-const emit = defineEmits(["openLogin"]);
+const emit = defineEmits(["openLogin", "closeSignup"]);
 
 const email = ref("");
 const password = ref("");
@@ -205,5 +207,16 @@ const validateInput = (e) => {
   width: 35%;
   background-color: var(--clr-purple-400);
   display: block;
+}
+
+.cross {
+  position: absolute;
+  inset: 0.5rem 0 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+  .cross {
+    display: none;
+  }
 }
 </style>

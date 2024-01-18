@@ -64,8 +64,8 @@
 
         .hamburger {
             display: block;
-            position: fixed;
-            inset: 1rem 1rem auto auto;
+            position: absolute;
+            inset: auto 1rem auto auto;
             z-index: 10;
 
             &:hover {

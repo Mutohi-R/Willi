@@ -2,10 +2,10 @@
   <nav-bar @open-signup="openSignup" @open-login="openLogin"></nav-bar>
   <main class="">
     <dialog id="signup" class="register" @click="closeSignUp($event)">
-      <SignUp @open-login="openLogin" />
+      <SignUp @open-login="openLogin" @close-signup="buttonCloseSignUp" />
     </dialog>
     <dialog id="login" class="register" @click="closeLogin($event)">
-      <LogIn @open-signup="openSignup" />
+      <LogIn @open-signup="openSignup" @click="buttonCloseLogin" />
     </dialog>
     <section class="hero | content-grid">
       <div class="breakout even-columns | gap-y-8 items-center">
@@ -239,11 +239,19 @@ const closeSignUp = (e) => {
   }
 };
 
+const buttonCloseSignUp = () => {
+  signup.close();
+}
+
 const closeLogin = (e) => {
   if (e.target.id === "login") {
     login.close();
   }
 };
+
+const buttonCloseLogin = () => {
+  login.close();
+}
 </script>
 
 <style>
