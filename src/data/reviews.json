@@ -1,21 +1,21 @@
 [
   {
     "id": 1,
-    "avatar": "src/assets/images/scot.png",
+    "avatar": "/public-assets/images/scot.png",
     "name": "Scot Evans",
     "company": "Apple",
     "content": "“Time management and productivity. Makes my job easier rather than having to constantly ask for progress updates.”"
   },
   {
     "id": 2,
-    "avatar": "src/assets/images/hadizah.png",
+    "avatar": "/public-assets/images/hadizah.png",
     "name": "Hadizah Salem",
     "company": "Shopify",
     "content": "“We don't need to spend as much time in meetings now that we use Willi. Transparency and communication has increased.”"
   },
   {
     "id": 3,
-    "avatar": "src/assets/images/dale.png",
+    "avatar": "/public-assets/images/dale.png",
     "name": "Dale Lavine",
     "company": "NASA",
     "content": "“We've had less confusion with task responsibilities and deadlines, which has increased productivity and efficiency.”"
