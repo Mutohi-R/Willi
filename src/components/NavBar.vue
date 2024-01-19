@@ -6,7 +6,8 @@
                     <LogoDark />
                 </router-link>
             </div>
-            <Hamburger class="hamburger | hidden" @click="toggleNav"/>
+            <Hamburger v-if="isMenuOpen" class="hamburger | hidden" @click="toggleNav"/>
+            <Cross v-else class="cross" @click="toggleNav"/>
             <nav id="primaryNav" class="primary__nav | flex justify-between items-center grow">
                 <ul role="list" class="nav__links | flex gap-8 mx-auto fs-500 text-clr-purple-600">
                     <li><router-link to="/">Products</router-link></li>
@@ -25,12 +26,14 @@
 </template>
 
 <script setup>
-    import { defineEmits } from 'vue';
+    import { ref, defineEmits } from 'vue';
 
     import Hamburger from './icons/Hamburger.vue';
     import LogoDark from '../components/icons/LogoDark.vue'
+    import Cross from './icons/Cross.vue';
 
     const emit = defineEmits(['openSignup', 'openLogin']);
+    const isMenuOpen = ref(true);
 
     const emitOpenSignup = () => {
         emit('openSignup');
@@ -41,6 +44,7 @@
     }
 
     const toggleNav = () => {
+        isMenuOpen.value = !isMenuOpen.value;
         primaryNav.toggleAttribute('data-visible');
     }
 </script> 
@@ -64,6 +68,17 @@
 
         .hamburger {
             display: block;
+            position: absolute;
+            inset: auto 1rem auto auto;
+            z-index: 10;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .cross {
+            transform: scale(1.6);
             position: absolute;
             inset: auto 1rem auto auto;
             z-index: 10;

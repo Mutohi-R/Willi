@@ -2,10 +2,10 @@
   <nav-bar @open-signup="openSignup" @open-login="openLogin"></nav-bar>
   <main> 
     <dialog id="signup" class="register" @click="closeSignUp($event)">
-      <SignUp @open-login="openLogin" />
+      <SignUp @open-login="openLogin" @close-signup="buttonCloseSignUp" />
     </dialog>
     <dialog id="login" class="register" @click="closeLogin($event)">
-      <LogIn @open-signup="openSignup" />
+      <LogIn @open-signup="openSignup" @click="buttonCloseLogin" />
     </dialog>
     <section class="contact__hero | content-grid | bg-clr-yellow-100">
       <div class="grid gap-10">
@@ -113,11 +113,19 @@ const closeSignUp = (e) => {
   }
 };
 
+const buttonCloseSignUp = () => {
+  signup.close();
+}
+
 const closeLogin = (e) => {
   if (e.target.id === "login") {
     login.close();
   }
 };
+
+const buttonCloseLogin = () => {
+  login.close();
+}
 </script>
 
 <style scoped>

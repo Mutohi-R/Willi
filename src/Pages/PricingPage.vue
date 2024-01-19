@@ -2,10 +2,10 @@
   <nav-bar @open-signup="openSignup" @open-login="openLogin"></nav-bar>
   <main>
     <dialog id="signup" class="register" @click="closeSignUp($event)">
-      <SignUp @open-login="openLogin" />
+      <SignUp @open-login="openLogin" @close-signup="buttonCloseSignUp" />
     </dialog>
     <dialog id="login" class="register" @click="closeLogin($event)">
-      <LogIn @open-signup="openSignup" />
+      <LogIn @open-signup="openSignup" @click="buttonCloseLogin" />
     </dialog>
     <section
       class="pricing__hero | content-grid | grid gap-2 justify-center bg-clr-yellow-100"
@@ -119,21 +119,38 @@ const closeSignUp = (e) => {
   }
 };
 
+const buttonCloseSignUp = () => {
+  signup.close();
+}
+
 const closeLogin = (e) => {
   if (e.target.id === "login") {
     login.close();
   }
 };
+
+const buttonCloseLogin = () => {
+  login.close();
+}
 </script>
 
 <style>
 .pricing__hero {
   padding-block: 9.8rem;
   background-image: url("/public-assets/images/vector-1.png"),
-    url("/public-assets/images/vector-2.png"), url("/public-assets/images/vector-3.png");
+  url("/public-assets/images/vector-3.png");
   background-repeat: no-repeat;
-  background-position: bottom -230px right -230px, bottom -300px left 10px,
+  background-position: bottom -250px right -250px,
     top -180px left -200px;
+}
+
+@media screen and (min-width: 830px) {
+  .pricing__hero {
+    background-image: url("/public-assets/images/vector-1.png"),
+    url("/public-assets/images/vector-2.png"), url("/public-assets/images/vector-3.png");
+    background-position: bottom -230px right -230px, bottom -300px left 10px,
+    top -180px left -200px;
+  }
 }
 
 .hero__text {

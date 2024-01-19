@@ -27,7 +27,6 @@
             <button
               class="button"
               data-type="secondary"
-              style="background: transparent"
             >
               Explore Demo
             </button>
@@ -259,10 +258,21 @@ const buttonCloseLogin = () => {
 .hero {
   padding-block: 8rem 4.6rem;
   background-image: linear-gradient(
-    45deg,
-    var(--clr-bg-yellow) 62.9%,
-    var(--clr-purple-400) 37.1%
-  );
+      35deg,
+      var(--clr-bg-yellow) 76%,
+      var(--clr-purple-400) 24%
+    );
+}
+
+@media screen and (min-width: 65em) {
+  .hero {
+    background-image: linear-gradient(
+      45deg,
+      var(--clr-bg-yellow) 62.9%,
+      var(--clr-purple-400) 37.1%
+    );
+    
+  }
 }
 
 .hero__heading {

@@ -347,14 +347,6 @@ body {
   } */
 }
 
-/* || STATES */
-
-
-
-form {
-  font: inherit;
-}
-
 /* || COMPOSITION */
 .content-grid {
   --padding-inline: 1rem;
