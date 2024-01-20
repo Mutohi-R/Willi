@@ -21,7 +21,7 @@
           </p>
           <input
             @input="validateInput"
-            v-model="email"
+            v-model="userData.email"
             required
             type="email"
             name="email"
@@ -40,7 +40,7 @@
           </p>
           <input
             @input="validateInput"
-            v-model="password"
+            v-model="userData.password"
             required
             type="password"
             name="password"
@@ -48,9 +48,10 @@
             class="input"
           />
         </div>
-        <button :disabled="!formValid" class="continue__button button | fs-300" data-type="primary">
+        <button @click="logUserIn" :disabled="!formValid" class="continue__button button | fs-300" data-type="primary">
           Continue
         </button>
+        <button @click="logUserOut" class="button" data-type="primary">Sign Out</button>
         <p>
           <button class="button | fs-200" data-type="tertiary">
             Forgot Password?
@@ -88,13 +89,21 @@
 
 <script setup>
 import { ref, defineEmits } from "vue";
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/firebase";
+
+
 import Error from "./icons/Error.vue";
 import Cross from "./icons/Cross.vue";
 
 const emit = defineEmits(["openSignup", "closeLogin"]);
 
-const email = ref("");
-const password = ref("");
+const userData = ref({
+  email: "",
+  password: "",
+})
+// const email = ref("");
+// const password = ref("");
 const invalidEmail = ref("");
 const invalidPassword = ref("");
 const formValid = ref("");
@@ -145,14 +154,40 @@ const validateInput = (e) => {
     input.value.length !== 0 &&
     !invalidEmail.value &&
     !invalidPassword.value &&
-    email.value.length !== 0 &&
-    password.value.length !== 0
+    userData.value.email.length !== 0 &&
+    userData.value.password.length !== 0
       ? true
       : false;
 
-  console.log("email", invalidEmail.value);
-  console.log("password", invalidPassword.value);
+  // console.log("email", invalidEmail.value);
+  // console.log("password", invalidPassword.value);
 };
+
+const logUserIn = async () => {
+  try {
+    const userCredentials = await signInWithEmailAndPassword(auth, userData.value.email, userData.value.password)
+    console.log("user logged in", userCredentials)
+  } catch (err) {
+    console.log('An error occurred: ', err)
+  }
+}
+
+const logUserOut = async () => {
+  try {
+    await signOut(auth)
+    console.log('user signed out')
+  } catch (err) {
+    console.log('An error occurred: ', err)
+  }
+}
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    alert("user logged in")
+  } else {
+    alert("user logged out")
+  }
+}) 
 </script>
 
 <style scoped>

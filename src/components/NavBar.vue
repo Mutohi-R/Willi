@@ -50,6 +50,19 @@
 </script> 
 
 <style scoped>
+
+    .fade-enter-from {
+        opacity: 0;
+
+    }
+
+    .fade-enter-active {
+        transition: all 5s ease;
+    }
+
+    .fade-enter-to {
+        opacity: 1;
+    }
     .primary__header {
         padding: 0.75rem 0;
         box-shadow: 0px 6px 12px 0px hsla(230, 7%, 78%, 0.3);
@@ -97,7 +110,17 @@
             gap: 3rem;
             position: fixed;
             inset: 0 0 0 30%;
-            
+            animation: slideIn .2s ease-in ;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
         }
 
         .nav__actions * {

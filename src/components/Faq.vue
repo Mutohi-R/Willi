@@ -5,24 +5,25 @@
     </h2>
     <div class=" | partial">
       <div
-        @click="toggleFaqAnswer(question.id)"
-        v-for="(question, index) in questions"
-        :key="question.id"
-        class="questions"
+      @click="toggleFaqAnswer(question.id)"
+      v-for="(question, index) in questions"
+      :key="question.id"
+      class="questions"
       >
         <div class="question | flex items-center justify-between gap-2">
           <p class="fs-600 text-clr-purple-600">{{ question.question }}</p>
           <ArrowUp v-if="question.isOpen" />
           <ArrowDown v-else />
         </div>
-        <p class="answer" v-if="question.isOpen">{{ question.answer }}</p>
+          <p class="answer" v-if="question.isOpen">{{ question.answer }}</p>
+        </div>
       </div>
-    </div>
   </section>
 </template>
 
 <script setup>
 import { ref } from "vue";
+
 import faqs from "@/data/faqs.json";
 import ArrowDown from "./icons/ArrowDown.vue";
 import ArrowUp from "./icons/ArrowUp.vue";

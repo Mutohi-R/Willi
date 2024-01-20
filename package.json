@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^10.7.2",
+    "gsap": "^3.12.5",
     "swiper": "^11.0.5",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"

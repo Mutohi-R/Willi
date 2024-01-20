@@ -5,7 +5,7 @@
       <SignUp @open-login="openLogin" @close-signup="buttonCloseSignUp" />
     </dialog>
     <dialog id="login" class="register" @click="closeLogin($event)">
-      <LogIn @open-signup="openSignup" @click="buttonCloseLogin" />
+      <LogIn @open-signup="openSignup" @close-login="buttonCloseLogin" />
     </dialog>
     <section class="hero | content-grid">
       <div class="breakout even-columns | gap-y-8 items-center">
@@ -221,7 +221,6 @@ import SignUp from "@/components/SignUp.vue";
 import LogIn from "@/components/LogIn.vue";
 import Footer from "@/components/Footer.vue";
 
-// const isRegister = ref(false);
 const openSignup = () => {
   login.close();
   signup.showModal();
