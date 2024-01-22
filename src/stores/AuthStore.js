@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import router from "@/router/router";
-import { useRouter } from "vue-router";
 import { auth } from "@/firebase";
 import {
   createUserWithEmailAndPassword,
@@ -12,12 +11,30 @@ import {
 export const useAuthStore = defineStore("auth", {
   state: () => ({
     userProfile: {
-      email: "",
+      
     },
-    userToken: null,
-    isLoggedIn: false,
+    isUserLoggedIn: false,
   }),
   actions: {
+    init() {
+      onAuthStateChanged(auth, (user) => {
+        if(user) {
+          this.userProfile.email = user.email;
+          this.isUserLoggedIn = true;
+          (async () => {
+            try {
+              const idToken = await user.getIdToken();
+              this.userProfile.idToken = idToken
+            } catch (err) {
+              console.log(err)
+            }
+          })()
+          router.push({ name: 'dashboard' })
+        } else {
+          this.userProfile = {}
+        }
+      })
+    },
     async signup(email, password) {
         try {
             await createUserWithEmailAndPassword(auth, email, password);
@@ -29,8 +46,8 @@ export const useAuthStore = defineStore("auth", {
     async login(email, password) {
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            this.userProfile.email = auth.currentUser.email;
-            this.isLoggedIn = true;
+            // this.userProfile.email = auth.currentUser.email;
+            this.isUserLoggedIn = true;
             router.push({ name: "dashboard" });
         } catch (err) {
             console.log(err)
@@ -38,9 +55,10 @@ export const useAuthStore = defineStore("auth", {
     },
     async logout() {
         await signOut(auth);
-        this.userProfile.email = "";
+        // this.userProfile.email = "";
         router.push({ name: "landing-page" });
-        console.log(this.userProfile)
+        this.isUserLoggedIn = false;
+        // console.log(this.userProfile)
     }
   }
 })

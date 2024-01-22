@@ -299,7 +299,7 @@ body {
     &:hover {
       color: var(--clr-purple-700);
       text-decoration: underline;
-      text-underline-offset: .5em;
+      text-underline-offset: .3em;
     }
 
     &:focus-within {
