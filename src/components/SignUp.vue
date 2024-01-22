@@ -100,13 +100,13 @@
 
 <script setup>
 import { ref, defineEmits } from "vue";
-import { auth } from "@/firebase"
-import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import { useAuthStore } from '@/stores/AuthStore'
 
 import Error from "./icons/Error.vue";
 import Cross from "./icons/Cross.vue";
 
 const emit = defineEmits(["openLogin", "closeSignup"]);
+const authStore = useAuthStore();
 
 const userData = ref({
   email: "",
@@ -171,18 +171,10 @@ const validateInput = (e) => {
   // console.log("password", invalidPassword.value);
 };
 
-const SubmitForm = async (email, password) => {
-
-}
-
 const register = async () => {
-  try {
-    const userCredentials = await createUserWithEmailAndPassword(auth, userData.value.email, userData.value.password)
-    console.log(userCredentials)
-  } catch (err) {
-    console.log('An error occurred: ', err)
-  }
+  authStore.signup(userData.value.email, userData.value.password)
 }
+
 
 const logUserOut = async () => {
   try {

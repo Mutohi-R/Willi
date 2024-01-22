@@ -6,6 +6,11 @@ import Customer from "@/Pages/Customer.vue";
 
 const routes = [
   {
+    path: "/dashboard",
+    name: "dashboard",
+    component: () => import("@/Pages/Dashboard.vue"),
+  },
+  {
     path: "/",
     name: "landing-page",
     component: LandingPage,

@@ -89,7 +89,8 @@
 
 <script setup>
 import { ref, defineEmits } from "vue";
-import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { useAuthStore } from '@/stores/AuthStore'
+import { signOut } from "firebase/auth";
 import { auth } from "@/firebase";
 
 
@@ -97,13 +98,12 @@ import Error from "./icons/Error.vue";
 import Cross from "./icons/Cross.vue";
 
 const emit = defineEmits(["openSignup", "closeLogin"]);
+const authStore = useAuthStore();
 
 const userData = ref({
   email: "",
   password: "",
 })
-// const email = ref("");
-// const password = ref("");
 const invalidEmail = ref("");
 const invalidPassword = ref("");
 const formValid = ref("");
@@ -164,12 +164,7 @@ const validateInput = (e) => {
 };
 
 const logUserIn = async () => {
-  try {
-    const userCredentials = await signInWithEmailAndPassword(auth, userData.value.email, userData.value.password)
-    console.log("user logged in", userCredentials)
-  } catch (err) {
-    console.log('An error occurred: ', err)
-  }
+  authStore.login(userData.value.email, userData.value.password)
 }
 
 const logUserOut = async () => {
@@ -181,13 +176,13 @@ const logUserOut = async () => {
   }
 }
 
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    alert("user logged in")
-  } else {
-    alert("user logged out")
-  }
-}) 
+// onAuthStateChanged(auth, (user) => {
+//   if (user) {
+//     alert("user logged in")
+//   } else {
+//     alert("user logged out")
+//   }
+// }) 
 </script>
 
 <style scoped>
