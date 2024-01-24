@@ -19,6 +19,12 @@
             <Error />
             Invalid email address
           </p>
+          <p
+            v-if="errors.emailInUse"
+            class="flex items-center gap-2 fs-200 text-clr-error-400"
+          >
+            This email is associated with another account
+          </p>
           <input
             @input="validateInput"
             v-model="userData.email"
@@ -100,12 +106,15 @@
 <script setup>
 import { ref, defineEmits } from "vue";
 import { useAuthStore } from '@/stores/AuthStore'
+import { storeToRefs } from "pinia";
 
 import Error from "./icons/Error.vue";
 import Cross from "./icons/Cross.vue";
 
 const emit = defineEmits(["openLogin", "closeSignup"]);
 const authStore = useAuthStore();
+const { errors } = storeToRefs(authStore);
+const emailInUse = ref(errors.emailInUse);
 
 const userData = ref({
   email: "",
@@ -119,6 +128,7 @@ const validateInput = (e) => {
   const input = e.target;
 
   const validateEmail = () => {
+    authStore.setEmailInUseToFalse()
     if (input.hasAttribute("type") && input.getAttribute("type") === "email") {
       const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/g;
 

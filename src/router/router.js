@@ -41,7 +41,6 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   const idToken = ref(localStorage.getItem('idToken'))
-  console.log('Token', idToken.value)
   if (!idToken.value && to.name == 'dashboard') {
     return { name: 'landing-page' }
   }
