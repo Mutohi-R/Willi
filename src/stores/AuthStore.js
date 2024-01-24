@@ -15,6 +15,11 @@ export const useAuthStore = defineStore("auth", {
     },
     isUserLoggedIn: false,
   }),
+  getters: {
+    userToken: () => {
+      return localStorage.getItem("idToken")
+    }
+  },
   actions: {
     init() {
       onAuthStateChanged(auth, (user) => {
@@ -25,6 +30,7 @@ export const useAuthStore = defineStore("auth", {
             try {
               const idToken = await user.getIdToken();
               this.userProfile.idToken = idToken
+              localStorage.setItem("idToken", idToken)
             } catch (err) {
               console.log(err)
             }
@@ -32,9 +38,17 @@ export const useAuthStore = defineStore("auth", {
           router.push({ name: 'dashboard' })
         } else {
           this.userProfile = {}
+          localStorage.setItem("idToken", "")
         }
       })
     },
+    // authGuard() {
+    //   if (!this.isUserLoggedIn && to.name !== 'landing-page') {
+    //     router.push({ name: 'landing-page' })
+    //   } else {
+    //     next()
+    //   }
+    // },
     async signup(email, password) {
         try {
             await createUserWithEmailAndPassword(auth, email, password);
