@@ -7,6 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
@@ -76,18 +77,34 @@ export const useAuthStore = defineStore("auth", {
         }
       }
     },
+    async loginWithGoogle() {
+      try {
+        const provider = new GoogleAuthProvider();
+        const result = await signInWithPopup(auth, provider);
+        console.log(result)
+        // router.push({ name: "dashboard" });
+        // this.isUserLoggedIn = true;
+        
+      } catch (err) {
+        console.log(err);
+      }
+    },
     async logout() {
-      await signOut(auth);
-      // this.userProfile.email = "";
-      router.push({ name: "landing-page" });
-      this.isUserLoggedIn = false;
-      // console.log(this.userProfile)
+      try {
+        await signOut(auth);
+        // this.userProfile.email = "";
+        router.push({ name: "landing-page" });
+        this.isUserLoggedIn = false;
+        // console.log(this.userProfile)
+      } catch (err) {
+        console.log(err);
+      }
     },
     setEmailInUseToFalse() {
       this.errors.emailInUse = false;
     },
     setInvalidCredToFalse() {
       this.errors.invalidCred = false;
-    }
+    },
   },
 });

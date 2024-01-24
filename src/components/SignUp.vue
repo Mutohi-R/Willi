@@ -78,7 +78,7 @@
         >
           OR
         </p>
-        <button class="button | items-center gap-2" data-type="secondary">
+        <button @click="authStore.loginWithGoogle" class="button | items-center gap-2" data-type="secondary">
           <img src="../assets/images/google.svg" alt="" />
           Continue with Google
         </button>
@@ -114,7 +114,6 @@ import Cross from "./icons/Cross.vue";
 const emit = defineEmits(["openLogin", "closeSignup"]);
 const authStore = useAuthStore();
 const { errors } = storeToRefs(authStore);
-const emailInUse = ref(errors.emailInUse);
 
 const userData = ref({
   email: "",
