@@ -57,7 +57,6 @@
         >
           Continue
         </button>
-        <button @click="logUserOut" class="button" data-type="primary">Sign Out</button>
         <p class="text-clr-grey-400 fs-200">
           By clicking "Continue" you agree to the Willi's
           <button class="button | fs-200" data-type="tertiary">
@@ -175,15 +174,6 @@ const register = async () => {
   authStore.signup(userData.value.email, userData.value.password)
 }
 
-
-const logUserOut = async () => {
-  try {
-    await signOut(auth)
-    console.log('user signed out')
-  } catch (err) {
-    console.log('An error occurred: ', err)
-  }
-}
 </script>
 
 <style scoped>

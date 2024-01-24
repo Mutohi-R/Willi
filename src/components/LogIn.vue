@@ -51,7 +51,6 @@
         <button @click="logUserIn" :disabled="!formValid" class="continue__button button | fs-300" data-type="primary">
           Continue
         </button>
-        <button @click="logUserOut" class="button" data-type="primary">Sign Out</button>
         <p>
           <button class="button | fs-200" data-type="tertiary">
             Forgot Password?
@@ -167,22 +166,6 @@ const logUserIn = async () => {
   authStore.login(userData.value.email, userData.value.password)
 }
 
-const logUserOut = async () => {
-  try {
-    await signOut(auth)
-    console.log('user signed out')
-  } catch (err) {
-    console.log('An error occurred: ', err)
-  }
-}
-
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     alert("user logged in")
-//   } else {
-//     alert("user logged out")
-//   }
-// }) 
 </script>
 
 <style scoped>
