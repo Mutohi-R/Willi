@@ -68,7 +68,7 @@
         >
           OR
         </p>
-        <button class="button | items-center gap-2" data-type="secondary">
+        <button @click="authStore.loginWithGoogle" class="button | items-center gap-2" data-type="secondary">
           <img src="../assets/images/google.svg" alt="" />
           Continue with Google
         </button>
