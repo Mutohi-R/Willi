@@ -450,6 +450,10 @@ body {
   color: var(--clr-neutral-100);
 }
 
+.text-clr-grey-300 {
+  color: var(--clr-grey-300);
+}
+
 .text-clr-grey-400 {
   color: var(--clr-grey-400);
 }
@@ -484,6 +488,10 @@ body {
 
 .text-clr-error-400 {
   color: var(--clr-error-400);
+}
+
+.text-clr-success-400 {
+  color: var(--clr-success-400);
 }
 
 .text-clr-info-400 {

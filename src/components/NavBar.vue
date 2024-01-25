@@ -50,19 +50,6 @@
 </script> 
 
 <style scoped>
-
-    .fade-enter-from {
-        opacity: 0;
-
-    }
-
-    .fade-enter-active {
-        transition: all 5s ease;
-    }
-
-    .fade-enter-to {
-        opacity: 1;
-    }
     .primary__header {
         padding: 0.75rem 0;
         box-shadow: 0px 6px 12px 0px hsla(230, 7%, 78%, 0.3);
